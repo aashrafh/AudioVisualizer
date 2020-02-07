@@ -10,15 +10,61 @@
             body{
                 margin: 0;
                 padding: 0;
-            }
+                }
 
             html, body{
                 overflow: hidden;
-            }
+                }
+
+            .button {
+                    display: inline-block;
+                    border-radius: 4px;
+                    background-color: #464f0e;
+                    border: none;
+                    color: #FFFFFF;
+                    font-size: 28px;
+                    transition: all 0.5s;
+                    cursor: pointer;
+                    position: absolute;
+                    top: 50%;
+                }
+
+                .button span {
+                    cursor: pointer;
+                    display: inline-block;
+                    position: relative;
+                    transition: 0.5s;
+                }
+
+                .button span:after {
+                    content: '\00bb';
+                    position: absolute;
+                    opacity: 0;
+                    top: 0;
+                    right: -20px;
+                    transition: 0.5s;
+                }
+
+                .button:hover span {
+                    padding-right: 25px;
+                }
+
+                .button:hover span:after {
+                    opacity: 1;
+                    right: 0;
+                }
+
+                .wrapper {
+                    text-align: center;
+                }
         </style>
     </head>
 
-    <body onload="visualize()">
-        <canvas id="canvas"></canvas>
+    <body bgcolor="#464f0e">
+        <div class="wrapper">
+             <button onclick="visualize()" class="button" style="vertical-align:middle" id="play"><span>Play</span></button>
+        </div>
+        <canvas id="canvas">
+        </canvas>
     </body>
 </html>

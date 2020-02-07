@@ -12,9 +12,8 @@ function visualize(){
 
     freqArray = new Uint8Array(audioAnalyser.frequencyBinCount);
 
-    document.getElementById("canvas").addEventListener("canplay", function(){
-        audio.play();
-    })
+    document.getElementById("play").style.display = "none";
+    audio.play();
     animate();
 }
 
@@ -32,8 +31,8 @@ function animate(){
 
     //background styling
     let gradient = canvasContext.createLinearGradient(0, 0, 0, canvas.height); //x1, y1, x2, y2
-    gradient.addColorStop(0, "rgba(40, 6, 18, 1)")  //offset, color
-    gradient.addColorStop(1, "rgba(200, 215, 254, 1)")  //offset, color
+    gradient.addColorStop(0, "rgba(26, 13, 21, 1)")  //offset, color
+    gradient.addColorStop(1, "rgba(36, 45, 33, 1)")  //offset, color
     canvasContext.fillStyle = gradient;
     canvasContext.fillRect(0, 0, canvas.width, canvas.height);
 
